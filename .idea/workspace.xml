@@ -1,4 +1,178 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PropertiesComponent">{}</component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5cbe1967-7b5e-40bc-9019-d6e0dd63d8c4" name="Changes" comment="* Fully working ControlPanel(ControlPanel.tsx) component, &#10;* Working with Builder(Builder.ts)&#10;* OSType - for different types of system.&#10;* Working with template system (Templator.ts)">
+      <change beforePath="$PROJECT_DIR$/frontend/components/ControlPanel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/ControlPanel.tsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="DmytroPolizhai &lt;dmytropolizhai@gmail.com&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SIGN_OFF_COMMIT" value="true" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;DmytroPolizhai&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/DmytroPolizhai/self-setuper.git&quot;,
+    &quot;accountId&quot;: &quot;61d1cec9-ab11-4904-8b23-94eb0f2fb38c&quot;
+  }
+}</component>
+  <component name="MaliciousPackageCheckinHandlerState">
+    <option name="packageCheck" value="true" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2xyDaZ2tGKqHP8ilccQVyqteJ1U" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "Feature-SetupFileCreator",
+    "last_opened_file_path": "D:/.dev/.repositories/Self-setuper",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "ts.external.directory.path": "D:\\.dev\\.repositories\\self-setuper\\frontend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\.dev\.repositories\self-setuper\frontend" />
+      <recent name="D:\.dev\.repositories\self-setuper\src\assets\template\windows" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-WS-243.25659.40" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5cbe1967-7b5e-40bc-9019-d6e0dd63d8c4" name="Changes" comment="" />
+      <created>1748901484578</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1748901484578</updated>
+      <workItem from="1748901486040" duration="572000" />
+      <workItem from="1748979620172" duration="3758000" />
+      <workItem from="1748983415385" duration="3744000" />
+      <workItem from="1748989037079" duration="3135000" />
+    </task>
+    <task id="LOCAL-00001" summary="Project init. Working with logic base 🚀🔥">
+      <option name="closed" value="true" />
+      <created>1748901891874</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1748901891874</updated>
+    </task>
+    <task id="LOCAL-00002" summary="* Fully working ControlPanel(ControlPanel.tsx) component, &#10;* Working with Builder(Builder.ts)&#10;* OSType - for different types of system.&#10;* Working with template system (Templator.ts)">
+      <option name="closed" value="true" />
+      <created>1748992094430</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1748992094430</updated>
+    </task>
+    <task id="LOCAL-00003" summary="* Fully working ControlPanel(ControlPanel.tsx) component, &#10;* Working with Builder(Builder.ts)&#10;* OSType - for different types of system.&#10;* Working with template system (Templator.ts)">
+      <option name="closed" value="true" />
+      <created>1748992131059</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1748992131059</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.template" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="User">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="*" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="Feature-SetupFileCreator" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Project init. Working with logic base " />
+    <MESSAGE value="* Fully working ControlPanel(ControlPanel.tsx) component, &#10;* Working with Builder(Builder.ts)&#10;* OSType - for different types of system.&#10;* Working with template system (Templator.ts)" />
+    <option name="LAST_COMMIT_MESSAGE" value="* Fully working ControlPanel(ControlPanel.tsx) component, &#10;* Working with Builder(Builder.ts)&#10;* OSType - for different types of system.&#10;* Working with template system (Templator.ts)" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
 </project>

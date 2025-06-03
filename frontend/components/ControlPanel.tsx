@@ -1,7 +1,7 @@
 ﻿import { OSType } from "@/models/OSType";
 import { buildFile } from "@/utils/Builder";
 
-import { Button, Divider, RadioButton, Text } from 'react-native-paper';
+import { Button, RadioButton, Text } from 'react-native-paper';
 import { useState, Fragment as ReactFragment } from "react";
 import { SafeAreaView, StyleSheet, View } from "react-native";
 

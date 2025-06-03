@@ -1,4 +1,4 @@
-﻿export class Templater {
+﻿export class Templator {
     private static readonly fileExtension = '.template';
 
     /**
