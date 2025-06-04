@@ -1,6 +1,5 @@
-﻿import { downloadContent } from "@/utils/FileDownloader";
+﻿import {FileDownloader} from "@/utils/FileDownloader";
 import { OSType } from "@/models/OSType";
-
 
 export async function buildFile(downloadLinks: string[], system: OSType) {
     let content = `@echo off\ncd .\n`;
@@ -27,5 +26,5 @@ export async function buildFile(downloadLinks: string[], system: OSType) {
     content += `\npause`;
 
 
-    await downloadContent(content, `setup-${system.toString()}.bat`)
+    await FileDownloader.downloadContent(content, `setup-${system.toString()}.bat`)
 }
