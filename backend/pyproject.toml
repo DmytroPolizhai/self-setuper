@@ -1,0 +1,22 @@
+[project]
+name = "api-self-setuper"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "DmytroPolizhai",email = "dmytropolizhai@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi (>=0.115.12,<0.116.0)",
+    "pendulum (>=3.1.0,<4.0.0)",
+    "uvicorn (>=0.34.3,<0.35.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+package-mode = false
