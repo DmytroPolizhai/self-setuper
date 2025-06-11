@@ -1,52 +1,50 @@
-import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
-import * as SplashScreen from 'expo-splash-screen';
-import { useEffect } from 'react';
-import 'react-native-reanimated';
+﻿import { Stack } from 'expo-router';
+import {useColorScheme} from 'react-native';
+import {
+    MD3DarkTheme,
+    MD3LightTheme,
+    PaperProvider,
+    adaptNavigationTheme
+} from "react-native-paper";
+
+import {
+    DarkTheme as NavigationDarkTheme,
+    DefaultTheme as NavigationDefaultTheme,
+    ThemeProvider,
+} from "@react-navigation/native";
+import {Colors} from "@/constants/Colors";
+import merge from "deepmerge";
 
 
-export {
-    // Catch any errors thrown by the Layout component.
-    ErrorBoundary,
-} from 'expo-router';
+const customDarkTheme = {...MD3DarkTheme, colors: Colors.dark};
+const customLightTheme = {...MD3LightTheme, colors: Colors.light};
 
-export const unstable_settings = {
-    // Ensure that reloading on `/modal` keeps a back button present.
-    initialRouteName: '(tabs)',
-};
+const {LightTheme, DarkTheme} = adaptNavigationTheme({
+    reactNavigationLight: NavigationDefaultTheme,
+    reactNavigationDark: NavigationDarkTheme,
+});
 
-// Prevent the splash screen from auto-hiding before asset loading is complete.
-SplashScreen.preventAutoHideAsync();
+const CombinedLightTheme = merge(LightTheme, customLightTheme);
+const CombinedDarkTheme = merge(DarkTheme, customDarkTheme);
 
 export default function RootLayout() {
-    const [loaded, error] = useFonts({
-        SpaceMono: require('@/assets/fonts/Arial.ttf'),
-        ...FontAwesome.font,
-    });
+    const colorScheme = useColorScheme();
 
-    // Expo Router uses Error Boundaries to catch errors in the navigation tree.
-    useEffect(() => {
-        if (error) throw error;
-    }, [error]);
+    const paperTheme =
+        colorScheme === "dark" ? CombinedDarkTheme : CombinedLightTheme;
 
-    useEffect(() => {
-        if (loaded) {
-            SplashScreen.hideAsync();
-        }
-    }, [loaded]);
-
-    if (!loaded) {
-        return null;
-    }
-
-    return <RootLayoutNav/>;
-}
-
-function RootLayoutNav() {
     return (
-        <Stack>
-            <Stack.Screen name="(tabs)" options={{headerShown: false}}/>
-        </Stack>
-    );
+        <PaperProvider theme={paperTheme}>
+            <ThemeProvider value={paperTheme}>
+                <Stack>
+                    <Stack.Screen
+                        name="(tabs)"
+                        options={{
+                            headerShown: false,
+                        }}
+                    />
+                </Stack>
+            </ThemeProvider>
+        </PaperProvider>
+    )
 }

@@ -1,24 +1,11 @@
-import { StyleSheet, View } from 'react-native';
-import { CardPanel } from '@/components/CardPanel'
-import { DialogProvider } from "@/components/dialog/DialogProvider";
-import { Provider } from "react-native-paper";
+﻿import {View} from "react-native";
 
-export default function Home() {
+import {ControlPanel} from "@/components/panels/ControlPanel"
+
+export default function Index() {
     return (
-        <Provider>
-            <View style={styles.container}>
-                <DialogProvider>
-                    <CardPanel/>
-                </DialogProvider>
-            </View>
-        </Provider>
+        <View>
+            <ControlPanel/>
+        </View>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});

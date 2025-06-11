@@ -8,8 +8,9 @@ import { FileDownloader } from "@/utils/files/FileDownloader";
 import { FileBuilder } from "@/utils/files/FileBuilder";
 
 
-export const CardPanel = () => {
+export const ControlPanel = () => {
     const [systemType, setSystemType] = useState<SystemExtension>(SystemExtension.windows);
+    const [links, setLinks] = useState([]);
     const handlePressDownload = () => {
         const fileBuilder = new FileBuilder();
         fileBuilder.build(links, systemType).then((file) => {
