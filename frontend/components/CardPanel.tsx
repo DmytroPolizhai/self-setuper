@@ -1,16 +1,18 @@
 ﻿import { SystemExtension } from "@/utils/system/types/SystemExtension";
 
-import { Button, RadioButton, Text } from 'react-native-paper';
-import { Fragment as ReactFragment, useState } from "react";
+import { Button, RadioButton, Text, Divider, List, IconButton } from 'react-native-paper';
+import { Fragment as ReactFragment, useState, ReactNode } from "react";
 import { SafeAreaView, StyleSheet, View } from "react-native";
 import { SystemManager } from "@/utils/system/SystemManager";
 import { FileDownloader } from "@/utils/files/FileDownloader";
 import { FileBuilder } from "@/utils/files/FileBuilder";
+import { useDialog } from "@/hooks/useDialog";
 
-export const ControlPanel = () => {
+
+export const CardPanel = () => {
     const [systemType, setSystemType] = useState<SystemExtension>(SystemExtension.windows);
-    const [links, setLinks] = useState(['https://stable.dl2.discordapp.net/distro/app/stable/win/x64/1.0.9194/DiscordSetup.exe']);
-
+    const [links, setLinks] = useState([]);
+    const {openDialog} = useDialog();
     const handlePressDownload = () => {
         const fileBuilder = new FileBuilder();
         fileBuilder.build(links, systemType).then((file) => {
@@ -19,7 +21,7 @@ export const ControlPanel = () => {
     }
 
     return (
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView style={styles.downloadContainer}>
             <Text variant="titleLarge" style={styles.label}>Select OS</Text>
             <RadioButton.Group onValueChange={value => setSystemType(value as SystemExtension)} value={systemType}>
                 <View style={styles.radioRow}>
@@ -31,17 +33,17 @@ export const ControlPanel = () => {
                     ))}
                 </View>
             </RadioButton.Group>
-            <Button mode="contained" onPress={handlePressDownload}> Download</Button>
+            <Button mode='outlined' icon="download" onPress={handleOpen}>Download</Button>
         </SafeAreaView>
     );
 }
 
 const styles = StyleSheet.create({
-    container: {
+    downloadContainer: {
         flex: 1,
-        padding: 16,
         flexDirection: 'column',
-        justifyContent: 'center',
+        marginBottom: 50,
+        justifyContent: 'flex-end',
     },
     label: {
         marginBottom: 8,
