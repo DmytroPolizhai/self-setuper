@@ -1,18 +1,15 @@
 ﻿import { SystemExtension } from "@/utils/system/types/SystemExtension";
 
-import { Button, RadioButton, Text, Divider, List, IconButton } from 'react-native-paper';
-import { Fragment as ReactFragment, useState, ReactNode } from "react";
+import { Button, RadioButton, Text} from 'react-native-paper';
+import { Fragment as ReactFragment, useState} from "react";
 import { SafeAreaView, StyleSheet, View } from "react-native";
 import { SystemManager } from "@/utils/system/SystemManager";
 import { FileDownloader } from "@/utils/files/FileDownloader";
 import { FileBuilder } from "@/utils/files/FileBuilder";
-import { useDialog } from "@/hooks/useDialog";
 
 
 export const CardPanel = () => {
     const [systemType, setSystemType] = useState<SystemExtension>(SystemExtension.windows);
-    const [links, setLinks] = useState([]);
-    const {openDialog} = useDialog();
     const handlePressDownload = () => {
         const fileBuilder = new FileBuilder();
         fileBuilder.build(links, systemType).then((file) => {
@@ -33,7 +30,7 @@ export const CardPanel = () => {
                     ))}
                 </View>
             </RadioButton.Group>
-            <Button mode='outlined' icon="download" onPress={handleOpen}>Download</Button>
+            <Button mode='outlined' icon="download" onPress={handlePressDownload}>Download</Button>
         </SafeAreaView>
     );
 }
