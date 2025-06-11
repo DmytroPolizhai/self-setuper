@@ -4,29 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5cbe1967-7b5e-40bc-9019-d6e0dd63d8c4" name="Changes" comment="Add windows template">
-      <change afterPath="$PROJECT_DIR$/backend/assets/win64/win.srte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/utils/files/FileBuilder.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/utils/files/types/File.ts" afterDir="false" />
+    <list default="true" id="5cbe1967-7b5e-40bc-9019-d6e0dd63d8c4" name="Changes" comment="* Rewrote core logic for building a template.&#10;* Added FileBuilder.ts for building files for different OS.&#10;* Added FileDownloader.ts for downloading files. &#10;* Changed System to SystemExtension.&#10;* Changed OS selection interface.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/assets/windows/win.srte" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/utils/system/SystemManager.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/app/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/app/cli.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/app/server.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/fabrics/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/fabrics/router_fabric.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/routers/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/routers/template.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/template_files.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/assets/templates/windows/bat.template" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components/ControlPanel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/ControlPanel.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/models/FileLink.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/models/OSType.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/utils/system/types/SystemExtension.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/utils/Builder.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/utils/FileDownloader.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/utils/files/FileDownloader.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/utils/Templator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/utils/TemplateManager.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/utils/files/FileBuilder.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/utils/files/FileBuilder.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/utils/system/SystemManager.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/utils/system/SystemManager.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +120,7 @@
       <workItem from="1748979620172" duration="3758000" />
       <workItem from="1748983415385" duration="3744000" />
       <workItem from="1748989037079" duration="3135000" />
-      <workItem from="1749636232996" duration="4111000" />
+      <workItem from="1749636232996" duration="6371000" />
     </task>
     <task id="LOCAL-00001" summary="Project init. Working with logic base 🚀🔥">
       <option name="closed" value="true" />
@@ -188,7 +170,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749544840615</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="* Rewrote core logic for building a template.&#10;* Added FileBuilder.ts for building files for different OS.&#10;* Added FileDownloader.ts for downloading files. &#10;* Changed System to SystemExtension.&#10;* Changed OS selection interface.">
+      <option name="closed" value="true" />
+      <created>1749640687783</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1749640687784</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,7 +241,8 @@
     <MESSAGE value="Add images for docs" />
     <MESSAGE value="* Remade backend structure&#10;* Created main.py for starting&#10;* Add download logic for templates" />
     <MESSAGE value="Add windows template" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add windows template" />
+    <MESSAGE value="* Rewrote core logic for building a template.&#10;* Added FileBuilder.ts for building files for different OS.&#10;* Added FileDownloader.ts for downloading files. &#10;* Changed System to SystemExtension.&#10;* Changed OS selection interface." />
+    <option name="LAST_COMMIT_MESSAGE" value="* Rewrote core logic for building a template.&#10;* Added FileBuilder.ts for building files for different OS.&#10;* Added FileDownloader.ts for downloading files. &#10;* Changed System to SystemExtension.&#10;* Changed OS selection interface." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

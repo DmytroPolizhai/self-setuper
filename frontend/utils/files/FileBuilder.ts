@@ -4,19 +4,20 @@ import { File } from '@/utils/files/types/File'
 import { SystemManager } from "../system/SystemManager";
 
 export class FileBuilder {
-    constructor(private systemType: System) {
-    }
-
-    public build = async (downloadLinks: string[], outFileName: string = 'setuper') => {
-        let outputFile: File = new File(outFileName, SystemManager.currentSystemExtension.toString());
+    public build = async (downloadLinks: string[], extension: SystemExtension, outFileName: string = 'setuper') => {
+        let outputFile: File = new File(outFileName, extension);
+        await outputFile.addString(`@echo off\nmkdir .downloads\nattrib +h ".downloads"\ncd .downloads`)
 
         for (let index: number = 0; index < downloadLinks.length; index++) {
             const downloadLink = downloadLinks[index];
 
-            const command: string = SystemManager.getDownloadCommand(downloadLink, index.toString());
+            const command: string = SystemManager.getDownloadCommand(extension, downloadLink, `${index.toString()}.exe`);
 
             await outputFile.addString(command);
         }
+
+        await outputFile.addString(`powershell -Command "(New-Object -ComObject WScript.Shell).Popup('All files are downloaded!', 0, 'self-setuper', 0x40)"\npause`)
+
         return outputFile;
     }
 }

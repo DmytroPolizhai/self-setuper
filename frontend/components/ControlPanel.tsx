@@ -1,19 +1,19 @@
 ﻿import { SystemExtension } from "@/utils/system/types/SystemExtension";
 
 import { Button, RadioButton, Text } from 'react-native-paper';
-import { useState, Fragment as ReactFragment } from "react";
+import { Fragment as ReactFragment, useState } from "react";
 import { SafeAreaView, StyleSheet, View } from "react-native";
 import { SystemManager } from "@/utils/system/SystemManager";
 import { FileDownloader } from "@/utils/files/FileDownloader";
 import { FileBuilder } from "@/utils/files/FileBuilder";
 
 export const ControlPanel = () => {
-    const [systemType, setSystemType] = useState<SystemExtension>(SystemManager.currentSystemExtension);
+    const [systemType, setSystemType] = useState<SystemExtension>(SystemExtension.windows);
     const [links, setLinks] = useState(['https://stable.dl2.discordapp.net/distro/app/stable/win/x64/1.0.9194/DiscordSetup.exe']);
 
     const handlePressDownload = () => {
-        const fileBuilder = new FileBuilder(systemType);
-        fileBuilder.build(links).then((file) => {
+        const fileBuilder = new FileBuilder();
+        fileBuilder.build(links, systemType).then((file) => {
             FileDownloader.download(file)
         });
     }

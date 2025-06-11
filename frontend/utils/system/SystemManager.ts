@@ -5,13 +5,13 @@ export class SystemManager {
         {label: "Windows", value: SystemExtension.windows},
         {label: "Linux/MacOS", value: SystemExtension.others},
     ];
-    static getDownloadCommand = (downloadLink: string, fileName: string) => {
+    static getDownloadCommand = (extension: SystemExtension, downloadLink: string, fileName: string) => {
         // Some logic here
-        return `powershell -Command "(New-Object Net.WebClient).DownloadFile(${downloadLink})", ${fileName})`;
+        switch (extension) {
+            case SystemExtension.windows:
+                return `powershell -Command "(New-Object Net.WebClient).DownloadFile('${downloadLink}', '${fileName}')"`;
+            case SystemExtension.others:
+                return `no command`
+        }
     }
-
-    static currentSystemExtension = (): SystemExtension => {
-        // Some logic here
-        return SystemExtension.windows;
-    };
 }
