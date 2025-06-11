@@ -4,8 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5cbe1967-7b5e-40bc-9019-d6e0dd63d8c4" name="Changes" comment="* Fully working ControlPanel(ControlPanel.tsx) component, &#10;* Working with Builder(Builder.ts)&#10;* OSType - for different types of system.&#10;* Working with template system (Templator.ts)">
-      <change beforePath="$PROJECT_DIR$/frontend/components/ControlPanel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/ControlPanel.tsx" afterDir="false" />
+    <list default="true" id="5cbe1967-7b5e-40bc-9019-d6e0dd63d8c4" name="Changes" comment="* Removed currentSystemExtension() in 'SystemManager.ts'">
+      <change afterPath="$PROJECT_DIR$/frontend/components/dialog/DialogAction.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/components/dialog/DialogProvider.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/components/dialog/types/DialogTypes.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/contexts/DialogContext.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/hooks/useDialog.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/(tabs)/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/ControlPanel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/CardPanel.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="tsconfig.json" />
+        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
       </list>
     </option>
@@ -27,7 +36,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Feature-backend" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -56,27 +65,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Feature-SetupFileCreator",
-    "last_opened_file_path": "D:/.dev/.repositories/Self-setuper",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "ts.external.directory.path": "D:\\.dev\\.repositories\\self-setuper\\frontend\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature-templater-backend-frontend&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/.dev/.repositories/Self-setuper&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\.dev\\.repositories\\self-setuper\\frontend\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\.dev\.repositories\self-setuper\frontend" />
-      <recent name="D:\.dev\.repositories\self-setuper\src\assets\template\windows" />
+      <recent name="D:\.dev\.repositories\self-setuper\frontend\components\dialogs" />
+      <recent name="D:\.dev\.repositories\self-setuper\frontend\utils\system\types" />
+      <recent name="D:\.dev\.repositories\self-setuper\frontend\utils\system" />
+      <recent name="D:\.dev\.repositories\self-setuper\frontend\models" />
+      <recent name="D:\.dev\.repositories\self-setuper\frontend\utils\files\types" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/frontend/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -97,6 +126,7 @@
       <workItem from="1748979620172" duration="3758000" />
       <workItem from="1748983415385" duration="3744000" />
       <workItem from="1748989037079" duration="3135000" />
+      <workItem from="1749636232996" duration="9926000" />
     </task>
     <task id="LOCAL-00001" summary="Project init. Working with logic base 🚀🔥">
       <option name="closed" value="true" />
@@ -122,7 +152,47 @@
       <option name="project" value="LOCAL" />
       <updated>1748992131059</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="* Remade backend structure&#10;* Created main.py for starting&#10;* Add download logic for templates">
+      <option name="closed" value="true" />
+      <created>1749544616806</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1749544616806</updated>
+    </task>
+    <task id="LOCAL-00005" summary="* Remade backend structure&#10;* Created main.py for starting&#10;* Add download logic for templates">
+      <option name="closed" value="true" />
+      <created>1749544799401</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1749544799401</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Add windows template">
+      <option name="closed" value="true" />
+      <created>1749544840615</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1749544840615</updated>
+    </task>
+    <task id="LOCAL-00007" summary="* Rewrote core logic for building a template.&#10;* Added FileBuilder.ts for building files for different OS.&#10;* Added FileDownloader.ts for downloading files. &#10;* Changed System to SystemExtension.&#10;* Changed OS selection interface.">
+      <option name="closed" value="true" />
+      <created>1749640687783</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1749640687784</updated>
+    </task>
+    <task id="LOCAL-00008" summary="* Removed currentSystemExtension() in 'SystemManager.ts'">
+      <option name="closed" value="true" />
+      <created>1749643954925</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1749643954925</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,6 +202,11 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.template" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="65fca946-3dc3-43ad-9744-6be32f9d8919" value="TOOL_WINDOW" />
+      </map>
+    </option>
     <option name="RECENT_FILTERS">
       <map>
         <entry key="User">
@@ -149,6 +224,11 @@
     </option>
     <option name="TAB_STATES">
       <map>
+        <entry key="65fca946-3dc3-43ad-9744-6be32f9d8919">
+          <value>
+            <State />
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State>
@@ -172,7 +252,22 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Project init. Working with logic base " />
     <MESSAGE value="* Fully working ControlPanel(ControlPanel.tsx) component, &#10;* Working with Builder(Builder.ts)&#10;* OSType - for different types of system.&#10;* Working with template system (Templator.ts)" />
-    <option name="LAST_COMMIT_MESSAGE" value="* Fully working ControlPanel(ControlPanel.tsx) component, &#10;* Working with Builder(Builder.ts)&#10;* OSType - for different types of system.&#10;* Working with template system (Templator.ts)" />
+    <MESSAGE value="Add images for docs" />
+    <MESSAGE value="* Remade backend structure&#10;* Created main.py for starting&#10;* Add download logic for templates" />
+    <MESSAGE value="Add windows template" />
+    <MESSAGE value="* Rewrote core logic for building a template.&#10;* Added FileBuilder.ts for building files for different OS.&#10;* Added FileDownloader.ts for downloading files. &#10;* Changed System to SystemExtension.&#10;* Changed OS selection interface." />
+    <MESSAGE value="* Removed currentSystemExtension() in 'SystemManager.ts'" />
+    <option name="LAST_COMMIT_MESSAGE" value="* Removed currentSystemExtension() in 'SystemManager.ts'" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/backend/main.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -1,0 +1,9 @@
+﻿# If you see this message, so you download manually this file or open this for editing.
+# Purpose of this file is powershell command(s) for Windows 11/10.
+#
+#
+#
+# This file extension (.srte) is used for templates of self-setuper
+# All rights are reserved.
+
+ powershell -Command "(New-Object Net.WebClient).DownloadFile("{}", "{}")
