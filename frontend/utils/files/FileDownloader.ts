@@ -1,19 +1,22 @@
-﻿export class FileDownloader {
-    private static emulateDownloading = async (url: string, filename: string) => {
+﻿import { File } from '@/utils/files/types/File'
+
+export class FileDownloader {
+    private static emulateDownloading = (url: string, filename: string) => {
         const hiddenDownloader = document.createElement("a");
         hiddenDownloader.href = url;
         hiddenDownloader.download = filename;
         document.body.appendChild(hiddenDownloader);
         hiddenDownloader.click();
         document.body.removeChild(hiddenDownloader);
-
         URL.revokeObjectURL(url);
-
     }
-    public static downloadContent = async (content: string, filename: string) => {
-        const blob = new Blob([content], {type: "text/plain"});
+
+    public static download(file: File) {
+        const blob = new Blob([file.getContent()], {
+            type: "text/plain"
+        });
         const url = URL.createObjectURL(blob);
 
-        await this.emulateDownloading(url, filename);
+        this.emulateDownloading(url, file.getFullName());
     }
 }
