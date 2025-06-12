@@ -1,5 +1,5 @@
 ﻿export enum SystemExtension {
-    windows = ".bat",
-    others = ".sh",
+    Windows = ".bat",
+    Others = ".sh",
 }
 

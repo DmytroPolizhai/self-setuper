@@ -4,18 +4,12 @@ import { Button, RadioButton, Text} from 'react-native-paper';
 import { Fragment as ReactFragment, useState} from "react";
 import { SafeAreaView, StyleSheet, View } from "react-native";
 import { SystemManager } from "@/utils/system/SystemManager";
-import { FileDownloader } from "@/utils/files/FileDownloader";
-import { FileBuilder } from "@/utils/files/FileBuilder";
 
 
 export const ControlPanel = () => {
-    const [systemType, setSystemType] = useState<SystemExtension>(SystemExtension.windows);
-    const [links, setLinks] = useState([]);
+    const [systemType, setSystemType] = useState<SystemExtension>(SystemExtension.Windows);
     const handlePressDownload = () => {
-        const fileBuilder = new FileBuilder();
-        fileBuilder.build(links, systemType).then((file) => {
-            FileDownloader.download(file)
-        });
+        // Logic for downloading
     }
 
     return (

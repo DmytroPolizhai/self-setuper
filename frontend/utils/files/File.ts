@@ -16,6 +16,14 @@
         return this.fileName + this.fileExtension;
     }
 
+    public add<T>(data: T): void {
+        this.content += data + "\n";
+    }
+
+    /**
+     * Use add<string> instead.
+     * @deprecated
+     */
     public addString = async (command: string) => {
         this.content += command + "\n";
     }
