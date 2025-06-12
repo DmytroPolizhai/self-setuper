@@ -1,4 +1,4 @@
-﻿export class File {
+﻿export class Script {
     private content: string = "";
 
     constructor(private fileName: string, private fileExtension: string) {
@@ -17,8 +17,20 @@
     }
 
     public add<T>(data: T): void {
-        this.content += data + "\n";
+        function isArray<T>(value: T | unknown[]): value is unknown[] {
+            return Array.isArray(value);
+        }
+
+        if (isArray(data)) {
+            for (const K of data) {
+                this.content += K + "\n"
+            }
+        } else {
+            this.content += data + "\n";
+        }
     }
+
+
 
     /**
      * Use add<string> instead.

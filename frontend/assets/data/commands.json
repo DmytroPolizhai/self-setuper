@@ -1,15 +1,8 @@
 ﻿{
   ".bat": {
-    "Download": "Invoke-WebRequest -Uri [url] -OutFile [fileName]",
-    "ChangeDirectory": "cd [directory]",
-    "ListFiles": "dir",
-    "Upload": "echo Upload not supported directly in cmd",
-    "Delete": "del [file]"
+    "Download": "powershell -Command \"$wc = New-Object net.webclient; $wc.Downloadfile('[url]', '[fileName]')\""
   },
   ".sh": {
-    "Download": "curl -O [URL]",
-    "ChangeDirectory": "cd [directory]",
-    "ListFiles": "ls -la",
-    "Delete": "rm [file]"
+    "Download": "curl -O [url]"
   }
 }

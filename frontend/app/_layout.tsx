@@ -12,7 +12,7 @@ import {
     DefaultTheme as NavigationDefaultTheme,
     ThemeProvider,
 } from "@react-navigation/native";
-import {Colors} from "@/constants/Colors";
+import { Colors } from "@/constants/schemes/red/Colors";
 import merge from "deepmerge";
 
 

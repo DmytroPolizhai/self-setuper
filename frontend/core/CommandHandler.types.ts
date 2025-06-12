@@ -1,4 +1,4 @@
-﻿import {SystemExtension} from "@/utils/system/types/SystemExtension";
+﻿import { ScriptExtensionType } from "@/shared/types";
 
 export const enum CommandList {
     Download = "Download",
@@ -9,7 +9,7 @@ export type CommandParams = { [key: string]: string };
 
 export type Command = {
     action: CommandList,
-    os: SystemExtension,
+    sysExtension: ScriptExtensionType,
     params: CommandParams
 }
 

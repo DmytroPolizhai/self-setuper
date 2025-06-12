@@ -1,13 +1,16 @@
-﻿import { SystemExtension } from "@/utils/system/types/SystemExtension";
+﻿import { ScriptExtension } from "@/shared/types";
 
 import { Button, RadioButton, Text} from 'react-native-paper';
 import { Fragment as ReactFragment, useState} from "react";
 import { SafeAreaView, StyleSheet, View } from "react-native";
-import { SystemManager } from "@/utils/system/SystemManager";
+import { SystemManager } from "@/core/system/SystemManager";
 
-
+/**
+ * Instead of this component use build tab.
+ * @deprecated
+ */
 export const ControlPanel = () => {
-    const [systemType, setSystemType] = useState<SystemExtension>(SystemExtension.Windows);
+    const [systemType, setSystemType] = useState<ScriptExtension>(ScriptExtension.windows);
     const handlePressDownload = () => {
         // Logic for downloading
     }
@@ -15,7 +18,7 @@ export const ControlPanel = () => {
     return (
         <SafeAreaView style={styles.downloadContainer}>
             <Text variant="titleLarge" style={styles.label}>Select OS</Text>
-            <RadioButton.Group onValueChange={value => setSystemType(value as SystemExtension)} value={systemType}>
+            <RadioButton.Group onValueChange={value => setSystemType(value as ScriptExtension)} value={systemType}>
                 <View style={styles.radioRow}>
                     {SystemManager.sysOptions.map(({value, label}) => (
                         <ReactFragment key={value}>

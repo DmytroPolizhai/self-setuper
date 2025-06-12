@@ -1,6 +1,6 @@
-﻿import {File} from '@/utils/files/File'
+﻿import { Script } from '@/core/script/Script'
 
-export class FileDownloader {
+export class ScriptDownloader {
     private static emulateDownloading = (url: string, filename: string) => {
         const hiddenDownloader = document.createElement("a");
         hiddenDownloader.href = url;
@@ -11,7 +11,7 @@ export class FileDownloader {
         URL.revokeObjectURL(url);
     }
 
-    public static download(file: File) {
+    public static download(file: Script) {
         const blob = new Blob([file.getContent()], {
             type: "text/plain"
         });

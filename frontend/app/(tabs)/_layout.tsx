@@ -1,5 +1,6 @@
 import {Tabs} from "expo-router";
 import {Feather} from "@expo/vector-icons";
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 export default function TabLayout() {
     return (
@@ -7,6 +8,7 @@ export default function TabLayout() {
             <Tabs.Screen
                 name="index"
                 options={{
+                    headerShown: false,
                     title: "Home",
                     tabBarIcon: ({color}) => (
                         <Feather name="home" size={24} color={color}/>
@@ -14,11 +16,12 @@ export default function TabLayout() {
                 }}
             />
             <Tabs.Screen
-                name="test"
+                name="build"
                 options={{
-                    title: "Test",
+                    headerShown: false,
+                    title: "Build",
                     tabBarIcon: ({color}) => (
-                        <Feather name="search" size={24} color={color}/>
+                        <MaterialIcons name="build" size={24} color={color}/>
                     )
                 }}
             />
