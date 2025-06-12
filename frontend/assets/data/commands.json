@@ -1,0 +1,15 @@
+﻿{
+  ".bat": {
+    "Download": "Invoke-WebRequest -Uri [url] -OutFile [fileName]",
+    "ChangeDirectory": "cd [directory]",
+    "ListFiles": "dir",
+    "Upload": "echo Upload not supported directly in cmd",
+    "Delete": "del [file]"
+  },
+  ".sh": {
+    "Download": "curl -O [URL]",
+    "ChangeDirectory": "cd [directory]",
+    "ListFiles": "ls -la",
+    "Delete": "rm [file]"
+  }
+}
