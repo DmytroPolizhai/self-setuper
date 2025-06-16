@@ -1,4 +1,4 @@
-﻿import { useState, Suspense } from 'react';
+﻿import { Suspense } from 'react';
 import { CardList } from "../CardList/CardList";
 import { CustomScrollView } from "@/components/CustomScrollView/CustomScrollView";
 import { LoadingIndicator } from "@/components/LoadingIndicator/LoadingIndicator";
