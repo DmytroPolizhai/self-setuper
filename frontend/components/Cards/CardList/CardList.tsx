@@ -8,7 +8,7 @@ export const CardList = (props: CardListType) => {
     const [cards, setCards] = useState<CardCleanTypes[]>(props.cards)
     const deleteCard = (cardIndex: number) => {
         try {
-            cards.forEach((card, index) => {
+            cards.forEach((card) => {
                 if (card == cards[cardIndex]) {
                     setCards(prev => prev.filter((_, i) => i !== cardIndex));
                 }
