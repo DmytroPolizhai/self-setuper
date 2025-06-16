@@ -1,8 +1,9 @@
 ﻿import { DialogContext } from '@/contexts/DialogContext'
-import { DialogConfig } from "./types/DialogTypes";
+import { DialogConfig } from "./Dialog.types";
+import { DialogAction } from "@/components/Dialog/DialogAction";
+
 
 import React, { useState, ReactNode } from 'react';
-import DialogAction from "@/components/dialog/DialogAction";
 
 
 export function DialogProvider({children}: { children: ReactNode }) {
@@ -19,7 +20,7 @@ export function DialogProvider({children}: { children: ReactNode }) {
     const closeDialog = () => {
         setVisible(false);
         setConfig(null);
-        setSelectedValue(undefined);
+        setSelectedValue("");
     };
 
     const handleConfirm = () => {

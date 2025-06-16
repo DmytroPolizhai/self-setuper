@@ -14,8 +14,8 @@ export type ActionDialogProps = {
     title: string;
     listItems?: ListItem[];
     radioOptions?: RadioOption[];
-    radioValue?: string;
-    onRadioChange?: (value: string) => void;
+    radioValue: string;
+    onRadioChange: (value: string) => void;
     onConfirm?: () => void;
     confirmLabel?: string;
     cancelLabel?: string;

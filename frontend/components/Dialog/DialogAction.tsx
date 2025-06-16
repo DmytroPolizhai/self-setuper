@@ -1,10 +1,10 @@
 ﻿import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Portal, Dialog, Button, Text, RadioButton, List, Divider } from 'react-native-paper';
-import { ActionDialogProps } from "@/components/dialog/types/DialogTypes";
+import { ActionDialogProps } from "@/components/Dialog/Dialog.types";
 
 
-export default function DialogAction({
+export const DialogAction = ({
                                          visible,
                                          onDismiss,
                                          title,
@@ -16,7 +16,7 @@ export default function DialogAction({
                                          confirmLabel = 'OK',
                                          cancelLabel = 'Cancel',
                                          showCancel = true,
-                                     }: ActionDialogProps) {
+                             }: ActionDialogProps) => {
     return (
         <Portal>
             <Dialog visible={visible} onDismiss={onDismiss}>

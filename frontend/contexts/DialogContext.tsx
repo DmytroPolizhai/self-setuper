@@ -1,5 +1,5 @@
 ﻿import { createContext } from "react";
-import { DialogConfig } from "@/components/dialog/types/DialogTypes";
+import { DialogConfig } from "@/components/Dialog/Dialog.types";
 
 type DialogContextType = {
     openDialog: (config: DialogConfig) => void;
