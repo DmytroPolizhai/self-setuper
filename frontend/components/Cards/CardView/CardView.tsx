@@ -1,8 +1,9 @@
 ﻿import { Suspense } from 'react';
-import { CardList } from "../CardList/CardList";
 import { CustomScrollView } from "@/components/CustomScrollView/CustomScrollView";
 import { LoadingIndicator } from "@/components/LoadingIndicator/LoadingIndicator";
+import { CardProps, CardList } from "@/components/Cards";
 import { generateArrayByLength } from "@/shared/utils/array";
+import { generateUUID } from "@/shared/utils/uuid";
 
 /**
  * Viewer for CardList
@@ -10,9 +11,10 @@ import { generateArrayByLength } from "@/shared/utils/array";
  * @constructor
  */
 export const CardView = () => {
-    const cards = generateArrayByLength<{ title: string, description: string }>(10, i => ({
+    // Remake by fetching in db. (axios)
+    const cards = generateArrayByLength<CardProps>(10, i => ({
+        id: generateUUID(i + 1),
         title: `Card ${i + 1}`,
-        description: `Description for card ${i + 1}`,
     }))
 
 

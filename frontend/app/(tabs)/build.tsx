@@ -1,9 +1,11 @@
-﻿import { SafeAreaView, StyleSheet } from "react-native";
-import { useState } from "react";
+﻿import { useState } from "react";
+import { SafeAreaView, StyleSheet } from "react-native";
+
 import { Link, ScriptExtensionType } from "@/shared/types";
 import { ScriptExtension } from "@/constants/Script";
-import { CardView } from "@/components/Cards/CardView/CardView";
+import { CardView } from "@/components/Cards/";
 
+import { Divider } from "react-native-paper";
 
 export default function BuildTab() {
     const [links, setLinks] = useState<Link[]>([]);
@@ -12,20 +14,15 @@ export default function BuildTab() {
 
     return (
         <SafeAreaView style={styles.container}>
+            <Divider />
             <CardView></CardView>
         </SafeAreaView>
     );
 }
 
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: "column",
-    },
-    radioRow: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginBottom: 8,
     },
 })

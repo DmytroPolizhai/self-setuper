@@ -1,5 +1,5 @@
-﻿import { CardCleanTypes } from "@/components/Cards/CardClean/CardClean.types";
+﻿import { CardProps } from "@/components/Cards";
 
-export type CardListType = {
-    cards: CardCleanTypes[]
+export type CardListProps = {
+    cards: CardProps[]
 }

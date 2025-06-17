@@ -1,4 +1,5 @@
-﻿export type CardCleanTypes = {
+﻿export type CardProps = {
+    id: string,
     title: string,
     description?: string,
     imageUri?: string,

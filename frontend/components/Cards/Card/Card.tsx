@@ -1,35 +1,33 @@
 ﻿import { Card as PaperCard, Text, Button } from "react-native-paper";
 import { View, Image, StyleSheet } from 'react-native';
-import { CardCleanTypes } from "@/components/Cards/CardClean/CardClean.types";
-import { Menu, IconButton } from 'react-native-paper';
-import { useState } from "react";
+
+import { Menu } from '@/components/Menu/Menu'
+import { CardProps } from "./Card.types";
 
 /**
  * **Just clean card. Use CardViewer to control card logic.**
  * @param props
  * @constructor
  */
-export const CardClean = (props: CardCleanTypes) => {
-    const [menuVisible, setMenuVisible] = useState(false);
-
-    const openMenu = () => setMenuVisible(true);
-    const closeMenu = () => setMenuVisible(false);
-
+export const Card = (props: CardProps) => {
     const onCardDelete = () => {
         console.log("Deleting:", props);
-        closeMenu();
         props.onDelete?.();
     };
 
     const onCardEdit = () => {
         console.log("Editing:", props);
-        closeMenu();
         props.onEdit?.();
     };
 
     const onImageUpload = () => {
         console.log("Uploading image for:", props);
-        closeMenu();
+
+        // const imageUploader = new ImageUploader();
+        // const newImage: Image = imageUploader.loadImage();
+        //
+        // props.imageUri = newImage.uri;
+
         props.onUploadImage?.();
     };
 
@@ -47,17 +45,7 @@ export const CardClean = (props: CardCleanTypes) => {
 
                     <View style={styles.menuContainer}>
                         <Button mode="contained">Download</Button>
-                        <Menu
-                            visible={menuVisible}
-                            onDismiss={closeMenu}
-                            anchor={
-                                <IconButton
-                                    icon="dots-vertical"
-                                    size={24}
-                                    onPress={openMenu}
-                                />
-                            }
-                        >
+                        <Menu>
                             <Menu.Item onPress={onImageUpload} title="Upload Image" leadingIcon="upload"/>
                             <Menu.Item onPress={onCardEdit} title="Edit" leadingIcon="pencil"/>
                             <Menu.Item onPress={onCardDelete} title="Delete" leadingIcon="trash-can"/>
@@ -100,5 +88,5 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         flexDirection: 'row',
         alignSelf: 'flex-end',
-    },
+    }
 });
