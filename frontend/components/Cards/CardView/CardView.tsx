@@ -13,7 +13,7 @@ import { generateUUID } from "@/shared/utils/uuid";
 export const CardView = () => {
     // Remake by fetching in db. (axios)
     const cards = generateArrayByLength<CardProps>(10, i => ({
-        id: generateUUID(i + 1),
+        id: generateUUID(),
         title: `Card ${i + 1}`,
     }))
 

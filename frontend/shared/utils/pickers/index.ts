@@ -1,0 +1,1 @@
+export { Icon, IconPicker } from './icon-picker/icon-picker'

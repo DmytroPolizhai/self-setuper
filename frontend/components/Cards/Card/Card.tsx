@@ -1,8 +1,14 @@
-﻿import { Card as PaperCard, Text, Button } from "react-native-paper";
-import { View, Image, StyleSheet } from 'react-native';
+﻿import { useState } from 'react';
+import { View, StyleSheet } from 'react-native';
+import { Card as PaperCard, Text, Button } from "react-native-paper";
 
+import { ResponsiveImage } from "@/components/ResponsiveImage/ResponsiveImage"
 import { Menu } from '@/components/Menu/Menu'
+import { Icon, IconPicker } from '@/shared/utils/pickers/'
+
 import { CardProps } from "./Card.types";
+
+import { isCompletedType } from "@/shared/utils/typeOperations";
 
 /**
  * **Just clean card. Use CardViewer to control card logic.**
@@ -10,6 +16,10 @@ import { CardProps } from "./Card.types";
  * @constructor
  */
 export const Card = (props: CardProps) => {
+    const [icon, setIcon] = useState<Icon>({
+        uri: props.imageUri
+    })
+
     const onCardDelete = () => {
         console.log("Deleting:", props);
         props.onDelete?.();
@@ -20,22 +30,25 @@ export const Card = (props: CardProps) => {
         props.onEdit?.();
     };
 
-    const onImageUpload = () => {
+    const onUploadIcon = () => {
         console.log("Uploading image for:", props);
-
-        // const imageUploader = new ImageUploader();
-        // const newImage: Image = imageUploader.loadImage();
-        //
-        // props.imageUri = newImage.uri;
-
-        props.onUploadImage?.();
+        const iconPicker = new IconPicker();
+        iconPicker.pick()?.then(icon => {
+            if (isCompletedType(icon)) {
+                setIcon(icon);
+            }
+            else {
+                console.error("Icon is not full completed: ", icon);
+            }
+        });
+        props.onUploadIcon?.();
     };
 
     return (
         <PaperCard style={styles.card}>
             <View style={styles.row}>
-                <Image
-                    source={{uri: props.imageUri}}
+                <ResponsiveImage
+                    source={{uri: icon?.uri }}
                     style={styles.image}
                 />
                 <View style={styles.content}>
@@ -46,7 +59,7 @@ export const Card = (props: CardProps) => {
                     <View style={styles.menuContainer}>
                         <Button mode="contained">Download</Button>
                         <Menu>
-                            <Menu.Item onPress={onImageUpload} title="Upload Image" leadingIcon="upload"/>
+                            <Menu.Item onPress={onUploadIcon} title="Upload Icon" leadingIcon="upload"/>
                             <Menu.Item onPress={onCardEdit} title="Edit" leadingIcon="pencil"/>
                             <Menu.Item onPress={onCardDelete} title="Delete" leadingIcon="trash-can"/>
                         </Menu>
@@ -67,8 +80,6 @@ const styles = StyleSheet.create({
     },
     image: {
         flexShrink: 0,
-        width: 100,
-        height: 100,
         borderRadius: 8,
         margin: 10,
     },

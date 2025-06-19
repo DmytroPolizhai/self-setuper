@@ -1,9 +1,11 @@
-﻿export type CardProps = {
+﻿import { Path } from "@/shared/types";
+
+export type CardProps = {
     id: string,
     title: string,
     description?: string,
-    imageUri?: string,
+    imageUri?: Path,
     onDelete?: () => void,
     onEdit?: () => void,
-    onUploadImage?: () => void,
+    onUploadIcon?: () => void,
 }
